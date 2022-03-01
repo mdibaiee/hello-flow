@@ -1,35 +1,20 @@
 import:
-  - word-counts.flow.yaml
+  - file-sizes.flow.yaml
 
 captures:
-  acmeCo/postgres/source-documents:
+  acmeCo/postgres/source-files:
     endpoint:
       airbyteSource:
-        image: ghcr.io/estuary/source-postgres:dev
-        config:
-          # Logical database name to capture from.
-          # [string] (required)
-          database: flow
-          # Host name of the database to connect to.
-          # [string] (required)
-          host: localhost
-          # User password configured within the database.
-          # [string] (required)
-          password: flow
-          # [integer] (required)
-          port: 5432
-          # Database user to use.
-          # [string] (required)
-          user: flow
+        image: ghcr.io/estuary/source-gcs:local
+        config: acmeCo/source-gcs.config.yaml
     bindings:
       - resource:
-          namespace: public
-          stream: documents
           syncMode: incremental
-        target: acmeCo/documents
+          stream: hellow-flow
+        target: acmeCo/files
 
 materializations:
-  acmeCo/postgres/materialize-word-counts:
+  acmeCo/postgres/materialize-file-sizes:
     endpoint:
       flowSink:
         image: ghcr.io/estuary/materialize-postgres:dev
@@ -41,5 +26,5 @@ materializations:
           user: flow
     bindings:
       - resource:
-          table: word_counts
-        source: acmeCo/word-counts
+          table: file_sizes
+        source: acmeCo/file-sizes

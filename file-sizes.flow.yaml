@@ -1,0 +1,87 @@
+collections:
+  # Collection into which we CDC.
+  acmeCo/files:
+    schema: files.schema.yaml
+    key: [/_meta/file]
+
+  # Derivation of current word counts.
+  acmeCo/file-sizes:
+    schema:
+      type: object
+      properties:
+        file:
+          type: string
+          description: file name
+        size:
+          type: integer
+          description: size of file
+      required: [file, size]
+      reduce: { strategy: merge }
+    key: [/file]
+    derivation:
+      transform:
+        fromDocuments:
+          source:
+            name: acmeCo/files
+          publish:
+            lambda: typescript
+
+tests:
+  acmeCo/tests/file-sizes-from-files:
+    - ingest:
+        description: Start with some initial files
+        collection: acmeCo/files
+        documents:
+          - body: &doc1 "The cat in the hat!"
+            _meta:
+              file: test
+          - body: &doc2 "The cat hat"
+            _meta:
+              file: another
+
+    - verify:
+        description: Expect sizes to reflect initial files
+        collection: acmeCo/file-sizes
+        documents:
+          - { file: another, size: 11 }
+          - { file: test, size: 19 }
+
+    #- ingest:
+    #    description: Update a document.
+    #    collection: acmeCo/files
+    #    documents:
+    #      - id: 2
+    #        body: &doc2 "hat Hat HAT"
+
+    #- verify:
+    #    description: Expect the prior document is retracted, and new one added.
+    #    collection: acmeCo/file-sizes
+    #    documents:
+    #      - { word: cat, count: 1, doc_count: 1 }
+    #      - { word: hat, count: 4, doc_count: 2 }
+    #      - { word: in, count: 1, doc_count: 1 }
+    #      - { word: the, count: 2, doc_count: 1 }
+
+    #- ingest:
+    #    description: Delete all documents.
+    #    collection: acmeCo/files
+    #    documents:
+    #      - id: 1
+    #        body: *doc1
+    #      - id: 2
+    #        body: *doc2
+
+    #- verify:
+    #    description: Expect all counts are zero.
+    #    collection: acmeCo/file-sizes
+    #    documents:
+    #      - { word: cat, count: 0, doc_count: 0 }
+    #      - { word: hat, count: 0, doc_count: 0 }
+    #      - { word: in, count: 0, doc_count: 0 }
+    #      - { word: the, count: 0, doc_count: 0 }
+
+storageMappings:
+  "":
+    stores:
+      - provider: S3
+        bucket: acmeco-data

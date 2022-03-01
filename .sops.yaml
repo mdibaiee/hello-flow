@@ -1,0 +1,3 @@
+creation_rules:
+  - gcp_kms: projects/hellow-flow/locations/global/keyRings/hellow-flow/cryptoKeys/hellow-flow
+    encrypted_suffix: _sops

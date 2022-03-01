@@ -1,0 +1,24 @@
+allOf:
+  - properties:
+      _meta:
+        properties:
+          file:
+            type: string
+          offset:
+            type: integer
+        type: object
+        required:
+          - file
+    required:
+      - _meta
+  - $ref: "#PublicFiles"
+definitions:
+  PublicFiles:
+    $anchor: PublicFiles
+    properties:
+      body:
+        description: Text of the document, to be split and counted.
+        type: string
+    required:
+      - body
+    type: object

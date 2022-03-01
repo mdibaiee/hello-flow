@@ -13,4 +13,4 @@ jobs:
       - name: Test catalog
         uses: ./.github/actions/flowctl
         with:
-          source: word-counts.flow.yaml
+          source: file-sizes.flow.yaml

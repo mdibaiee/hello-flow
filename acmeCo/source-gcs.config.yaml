@@ -1,0 +1,26 @@
+ascendingKeys: false
+googleCredentials_sops:
+    client_email: ENC[AES256_GCM,data:jQenQQXpG4KJ7Xpu0lna18IDfmEL5k1ThzBljxIw5LKofASbAKNp7/+XOF3c+ik=,iv:BvIpI32yTJrpRU5MkJmB64nDMg/X56+M99O1F/D/fOA=,tag:IBWraEv50cv3cXN8XQJ5mA==,type:str]
+    client_id: ENC[AES256_GCM,data:0VEsdx8NKERGNa5emEYzYaNS+MrU,iv:BmZJGciI4SQILZrdGlbiaDFhUKFbiBNK37A/nSgD+sk=,tag:OrHgDNG7ySZJSu4wVmnQ4g==,type:str]
+    client_x509_cert_url: ENC[AES256_GCM,data:ApYfj58Zjs1/Uwxp6yWAWLk8h9YenVpF7r1aM7UhUxz/nu5AHj2j153eGBNq+WNzGRWjy+taM/4ECVU1OV1Gelrnfy3Vikw/RxyB6U8m0QXi55Og+78y5h39OCsqiAVIoQUF,iv:lB7tZWef1OviV+PVuejCIK0/Q2hwwyF8BKsx6mKSgEo=,tag:PsJgfS4QHEE7o/YI4li8Rw==,type:str]
+    auth_uri: ENC[AES256_GCM,data:E4eGd3BCudt6lOxonNaIwn0ZLXvNpHFmNvCYKcfvVuMxj733vJaNWJc=,iv:6Cyk4TtnsslREdTnmzDRFxT+yJg7lRQt3GEv4ShZIyQ=,tag:f6Y+hcALXLgIsGg1S0Ihug==,type:str]
+    auth_provider_x509_cert_url: ENC[AES256_GCM,data:N2yekH3eRra4l2obDUWNWMPicdpBMo4nbzns52GrvmJrXVz+6nCik2I0,iv:oeaGOfvRBqai41yIpgeICJIwc+qcfanK6JG/tGcB6SE=,tag:jVz4MDy6J7ToYAVVR/eSeg==,type:str]
+    private_key: ENC[AES256_GCM,data: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,iv:bog9iqQBixVJZ0m/dxycWWVYsz5ynJ33nETEYdf+NgE=,tag:fZNrS9dB4Ty2PMN5jL5Oyg==,type:str]
+    private_key_id: ENC[AES256_GCM,data:MxOHBmHn9ErxgKu2tjt3D2VkBaR5G8xjK6FRKDpgkg+TKD7xtSfTqg==,iv:7+d+l3NppIxPKZoyTf8XiP2OfYEla7Ps4ngxx/jtlwk=,tag:6v7aQHZbUCASSxRol6hQmg==,type:str]
+    project_id: ENC[AES256_GCM,data:M5pPnTlz6I4Q1dE=,iv:CB9WX9ckwVIJbhjn227YvSB6XM5j4zgvOyYp3eqZUBU=,tag:F4kkkJz9/1lSWWFbEVw+kQ==,type:str]
+    token_uri: ENC[AES256_GCM,data:RWRc7UtdPED+XZ4IyB9de8m0t+3DsqSw94lZHyabv7/41kg=,iv:CpPxgur+8Di3UBIUbFCX4EFvymSuRaCa96wWoMYmtI0=,tag:XeXV8ifnL/e1eB2p0cIFgA==,type:str]
+    type: ENC[AES256_GCM,data:g4Vd/OyHDtq30iz9e/Uh,iv:rh7Ees13PAsq35YLUkOXFEfUOv6s59JSXY6/jlcZzuY=,tag:rhgvgMG29wIs/B54KwqpFQ==,type:str]
+sops:
+    kms: []
+    gcp_kms:
+        - resource_id: projects/hellow-flow/locations/global/keyRings/hellow-flow/cryptoKeys/hellow-flow
+          created_at: "2022-03-01T17:16:38Z"
+          enc: CiQAk4f/y3Ban+mTGWGz8HS1GxoBy0p0maFdRWxIcPKfz6y4P4ASSADwSmyPTSpjYb6395zuzBFR1j1lGyCLo9W8JjjGB8rCdJ1vs6M3PuXoSBVvwcU5/DliL/WkuNp4X6Ow8I+Hzf18yb9kbF9ZCw==
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-03-02T13:30:41Z"
+    mac: ENC[AES256_GCM,data:us6TsPWqWufXIe83LNV4BrAmU1vnRK4ARMdN08t+6Mm4+TEk71BfEr3/mwa8y4lGKHO8D78rHdgFuhI0YFBV9rXCsIgT/wLU4QiYPsqMNKgpibcqneTJdUt51+yzpQXBwPqOmvBKVuzT/R8NVkuK8jPU8tDEhtj+dOHElQJGZd8=,iv:O3i3e/FSz/CXFvYSJ2sCQ9KbKTPa9ZoGwH+phj6GVt0=,tag:PzI6ny3Frq0UDYIuLkd0rg==,type:str]
+    pgp: []
+    encrypted_suffix: _sops
+    version: 3.7.1
