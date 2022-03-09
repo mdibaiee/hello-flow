@@ -1,0 +1,20 @@
+aws_key_id_sops: ENC[AES256_GCM,data:UkVrkd8Vak98Gkb2jfITLkkrqpE=,iv:MgeWnPM9o6zLdx97QDP2ff+T+MQH/6kgdWBrXgJQHGE=,tag:FkYvpIkA8szdMBdmbIHmGw==,type:str]
+aws_secret_key_sops: ENC[AES256_GCM,data:M4+K1GN5X41+Lvb/jLxaGoCSE6n5oU8MovIBAdM3emAamDJQy0lwTA==,iv:rh4mtJLB7fvAY21H2COwtNP5GrfQS7OzTCxdFkPF/kg=,tag:Y76LFvM41CdQzPTtFV5LgQ==,type:str]
+database: flow_mahdi_test
+engine_url: https://flow-mahdi-test-general-purpose-1.estuary.us-east-1.app.firebolt.io
+password_sops: ENC[AES256_GCM,data:VTWiwn9vwJl+84zYl84=,iv:VcLCWDNYrdTB/vAR9jwQLYSXj1HeJxO/0kS6gXNx1ks=,tag:91yGCn4zXr3/gMz0OYQaBA==,type:str]
+username_sops: ENC[AES256_GCM,data:N+9msieXIztwZcAnETvjZR0=,iv:kB4i1Cn77+Q1WzrBFhoXHrdxSkzFTzvOZzZ3ysjbZAg=,tag:3DPwv7S9U03vVJHicQZ1fA==,type:str]
+sops:
+    kms: []
+    gcp_kms:
+        - resource_id: projects/hellow-flow/locations/global/keyRings/hellow-flow/cryptoKeys/hellow-flow
+          created_at: "2022-03-09T11:31:58Z"
+          enc: CiQAk4f/y3iR+80+0k+tdKnz93fjcF+Eq7QkngStqgoLDAO2MokSSQDwSmyP9VzmfvLviVEVhbWyJFmwl7mGOgbRgCpQFuAiRg6w70X8Zz5tjDZEkmqVN2tebSPDlJ8sOnTOZl1NbN1hGErtUSzOI+Y=
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-03-09T11:37:07Z"
+    mac: ENC[AES256_GCM,data:n01Cqbv7wp/YVO5pVAryGGFplME5jpPvagtBhzFkD5mv7uzZjDHNayrPY5mEl5bq8voresUKGev4s5CK9xOcSlPYQNh6/JBEmWTD7TTpbLqK//VG2hfysrctufFSi5ztcx01gpK35GOULldHbdcJWtpTENVMFsrL/qksRuVfwBw=,iv:XPTo5jM0Hyl1vfb/eZPgwY9sjKGB7XBDYW6yY4gldg4=,tag:3YI1q7yJrSEmHh4Jx+SiyA==,type:str]
+    pgp: []
+    encrypted_suffix: _sops
+    version: 3.7.1

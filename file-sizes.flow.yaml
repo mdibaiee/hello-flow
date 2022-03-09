@@ -9,15 +9,15 @@ collections:
     schema:
       type: object
       properties:
-        file:
+        filename:
           type: string
           description: file name
         size:
           type: integer
           description: size of file
-      required: [file, size]
+      required: [filename, size]
       reduce: { strategy: merge }
-    key: [/file]
+    key: [/filename]
     derivation:
       transform:
         fromDocuments:
@@ -43,8 +43,8 @@ tests:
         description: Expect sizes to reflect initial files
         collection: acmeCo/file-sizes
         documents:
-          - { file: another, size: 11 }
-          - { file: test, size: 19 }
+          - { filename: another, size: 11 }
+          - { filename: test, size: 19 }
 
     #- ingest:
     #    description: Update a document.

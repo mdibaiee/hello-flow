@@ -5,7 +5,7 @@ captures:
   acmeCo/postgres/source-files:
     endpoint:
       airbyteSource:
-        image: ghcr.io/estuary/source-gcs:local
+        image: ghcr.io/estuary/source-gcs:dev
         config: acmeCo/source-gcs.config.yaml
     bindings:
       - resource:
@@ -14,17 +14,16 @@ captures:
         target: acmeCo/files
 
 materializations:
-  acmeCo/postgres/materialize-file-sizes:
+  acmeCo/firebolt/materialize-file-sizes:
     endpoint:
       flowSink:
-        image: ghcr.io/estuary/materialize-postgres:dev
-        config:
-          database: flow
-          host: localhost
-          password: flow
-          port: 5432
-          user: flow
+        image: ghcr.io/estuary/materialize-firebolt:84ac871
+        config: acmeCo/materialize-firebolt.config.yaml
     bindings:
       - resource:
-          table: file_sizes
+          table: files
+          bucket: mahdi-flow-test-bucket
+          prefix: ""
+          aws_region: us-east-1
+
         source: acmeCo/file-sizes
