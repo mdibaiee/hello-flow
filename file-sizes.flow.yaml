@@ -15,7 +15,12 @@ collections:
         size:
           type: integer
           description: size of file
-      required: [filename, size]
+        arr:
+          type: array
+          description: random array for testing
+          items:
+            type: integer
+      required: [filename, size, arr]
       reduce: { strategy: merge }
     key: [/filename]
     derivation:
@@ -25,6 +30,8 @@ collections:
             name: acmeCo/files
           publish:
             lambda: typescript
+    projections:
+      test: /filename
 
 tests:
   acmeCo/tests/file-sizes-from-files:
@@ -43,8 +50,8 @@ tests:
         description: Expect sizes to reflect initial files
         collection: acmeCo/file-sizes
         documents:
-          - { filename: another, size: 11 }
-          - { filename: test, size: 19 }
+          - { filename: another, size: 11, arr: [1, 2] }
+          - { filename: test, size: 19, arr: [1, 2] }
 
     #- ingest:
     #    description: Update a document.

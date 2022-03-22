@@ -7,6 +7,6 @@ export class AcmeCoFileSizes implements interfaces.AcmeCoFileSizes {
         _register: registers.AcmeCoFileSizes,
         _previous: registers.AcmeCoFileSizes,
     ): collections.AcmeCoFileSizes[] {
-        return [{ filename: source._meta.file, size: source.body.length }];
+        return [{ filename: source._meta.file, size: source.body.length, arr: [1, 2] }];
     }
 }

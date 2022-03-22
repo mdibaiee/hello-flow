@@ -1,8 +1,11 @@
 aws_key_id_sops: ENC[AES256_GCM,data:UkVrkd8Vak98Gkb2jfITLkkrqpE=,iv:MgeWnPM9o6zLdx97QDP2ff+T+MQH/6kgdWBrXgJQHGE=,tag:FkYvpIkA8szdMBdmbIHmGw==,type:str]
+aws_region: us-east-1
 aws_secret_key_sops: ENC[AES256_GCM,data:M4+K1GN5X41+Lvb/jLxaGoCSE6n5oU8MovIBAdM3emAamDJQy0lwTA==,iv:rh4mtJLB7fvAY21H2COwtNP5GrfQS7OzTCxdFkPF/kg=,tag:Y76LFvM41CdQzPTtFV5LgQ==,type:str]
 database: flow_mahdi_test
-engine_url: https://flow-mahdi-test-general-purpose-1.estuary.us-east-1.app.firebolt.io
+engine_url: flow-mahdi-test-general-purpose.estuary.us-east-1.app.firebolt.io
 password_sops: ENC[AES256_GCM,data:VTWiwn9vwJl+84zYl84=,iv:VcLCWDNYrdTB/vAR9jwQLYSXj1HeJxO/0kS6gXNx1ks=,tag:91yGCn4zXr3/gMz0OYQaBA==,type:str]
+s3_bucket: mahdi-flow-test-bucket
+s3_prefix: ""
 username_sops: ENC[AES256_GCM,data:N+9msieXIztwZcAnETvjZR0=,iv:kB4i1Cn77+Q1WzrBFhoXHrdxSkzFTzvOZzZ3ysjbZAg=,tag:3DPwv7S9U03vVJHicQZ1fA==,type:str]
 sops:
     kms: []
@@ -13,8 +16,8 @@ sops:
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-03-09T11:37:07Z"
-    mac: ENC[AES256_GCM,data:n01Cqbv7wp/YVO5pVAryGGFplME5jpPvagtBhzFkD5mv7uzZjDHNayrPY5mEl5bq8voresUKGev4s5CK9xOcSlPYQNh6/JBEmWTD7TTpbLqK//VG2hfysrctufFSi5ztcx01gpK35GOULldHbdcJWtpTENVMFsrL/qksRuVfwBw=,iv:XPTo5jM0Hyl1vfb/eZPgwY9sjKGB7XBDYW6yY4gldg4=,tag:3YI1q7yJrSEmHh4Jx+SiyA==,type:str]
+    lastmodified: "2022-03-14T15:43:42Z"
+    mac: ENC[AES256_GCM,data:8MbXRS38M5wrRXB8J8XEjjwIixOiaw2cMOGp+Y0zhXudmNfZxyUdk0O3j8SGoymBJr0saQJphCMeIGfwhBl9RFJ107ePMOusJFs+3BJcLQ4UDyPtU+oZ3AGv2GsO2t/RAxo+FKQ4U26UK/31z0JXnvXWwwihMqTkJSvBWU3hNdY=,iv:5n+sLghjXjlsbR6wtZGtPc8lsATkvQz6VAXCq/nqD9M=,tag:ANkiIG1iaEtM3AhfXwnBqQ==,type:str]
     pgp: []
     encrypted_suffix: _sops
     version: 3.7.1
