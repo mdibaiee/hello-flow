@@ -17,28 +17,13 @@ materializations:
   acmeCo/firebolt/materialize-file-sizes:
     endpoint:
       flowSink:
-        image: docker.io/library/materialize-firebolt:local
+        image: ghcr.io/estuary/materialize-firebolt:dev
         config: acmeCo/materialize-firebolt.config.yaml
     bindings:
       - resource:
           table: files
           table_type: fact
         source: acmeCo/file-sizes
-        #fields:
-          #recommended: true
-          # include: { arr: {} }
-
-  #acmeCo/postgres/materialize-file-sizes:
-  #  endpoint:
-  #    flowSink:
-  #      image: ghcr.io/estuary/materialize-postgres:dev
-  #      config:
-  #        database: flow
-  #        host: localhost
-  #        password: flow
-  #        port: 5432
-  #        user: flow
-  #  bindings:
-  #    - resource:
-  #        table: file_sizes
-  #      source: acmeCo/file-sizes
+        fields:
+          recommended: true
+          include: { arr: {}, nested_array: {}, obj: {} }

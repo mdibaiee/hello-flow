@@ -20,7 +20,21 @@ collections:
           description: random array for testing
           items:
             type: integer
-      required: [filename, size, arr]
+        nested_array:
+          type: array
+          description: a nested array
+          items:
+            type: array
+            items:
+              type: string
+        obj:
+          type: object
+          description: random object for testing
+          properties:
+            name:
+              type: string
+              description: name
+      required: [filename, size, arr, nested_array]
       reduce: { strategy: merge }
     key: [/filename]
     derivation:
@@ -52,40 +66,6 @@ tests:
         documents:
           - { filename: another, size: 11, arr: [1, 2] }
           - { filename: test, size: 19, arr: [1, 2] }
-
-    #- ingest:
-    #    description: Update a document.
-    #    collection: acmeCo/files
-    #    documents:
-    #      - id: 2
-    #        body: &doc2 "hat Hat HAT"
-
-    #- verify:
-    #    description: Expect the prior document is retracted, and new one added.
-    #    collection: acmeCo/file-sizes
-    #    documents:
-    #      - { word: cat, count: 1, doc_count: 1 }
-    #      - { word: hat, count: 4, doc_count: 2 }
-    #      - { word: in, count: 1, doc_count: 1 }
-    #      - { word: the, count: 2, doc_count: 1 }
-
-    #- ingest:
-    #    description: Delete all documents.
-    #    collection: acmeCo/files
-    #    documents:
-    #      - id: 1
-    #        body: *doc1
-    #      - id: 2
-    #        body: *doc2
-
-    #- verify:
-    #    description: Expect all counts are zero.
-    #    collection: acmeCo/file-sizes
-    #    documents:
-    #      - { word: cat, count: 0, doc_count: 0 }
-    #      - { word: hat, count: 0, doc_count: 0 }
-    #      - { word: in, count: 0, doc_count: 0 }
-    #      - { word: the, count: 0, doc_count: 0 }
 
 storageMappings:
   "":
